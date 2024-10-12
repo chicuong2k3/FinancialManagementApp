@@ -8,13 +8,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagementApp.Client", "src\FinancialManagementApp.Client\FinancialManagementApp.Client.csproj", "{F1D23BE6-6B08-47D4-A06E-A3636FAE2810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagementApp.Client", "src\FinancialManagementApp.Client\FinancialManagementApp.Client.csproj", "{F1D23BE6-6B08-47D4-A06E-A3636FAE2810}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagementApp.Data", "src\FinancialManagementApp.Data\FinancialManagementApp.Data.csproj", "{1CB1AEF9-101E-4BA0-89CE-84EFD5AC4B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagementApp.Shared", "src\FinancialManagementApp.Shared\FinancialManagementApp.Shared.csproj", "{6FCD2F50-33B6-4157-AE68-7F928454A31F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagementApp.Shared", "src\FinancialManagementApp.Shared\FinancialManagementApp.Shared.csproj", "{6FCD2F50-33B6-4157-AE68-7F928454A31F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagementApp.Client.Tests", "test\FinancialManagementApp.Client.Tests\FinancialManagementApp.Client.Tests.csproj", "{1EEEB2FF-43FE-4EEB-A40F-2C2858D176BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagementApp.Client.Tests", "test\FinancialManagementApp.Client.Tests\FinancialManagementApp.Client.Tests.csproj", "{1EEEB2FF-43FE-4EEB-A40F-2C2858D176BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagementApp.Api", "src\FinancialManagementApp.Api\FinancialManagementApp.Api.csproj", "{FE321F91-CE34-47CA-B43A-CAD080466A4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +26,6 @@ Global
 		{F1D23BE6-6B08-47D4-A06E-A3636FAE2810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1D23BE6-6B08-47D4-A06E-A3636FAE2810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1D23BE6-6B08-47D4-A06E-A3636FAE2810}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CB1AEF9-101E-4BA0-89CE-84EFD5AC4B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CB1AEF9-101E-4BA0-89CE-84EFD5AC4B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CB1AEF9-101E-4BA0-89CE-84EFD5AC4B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CB1AEF9-101E-4BA0-89CE-84EFD5AC4B62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FCD2F50-33B6-4157-AE68-7F928454A31F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6FCD2F50-33B6-4157-AE68-7F928454A31F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FCD2F50-33B6-4157-AE68-7F928454A31F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +34,10 @@ Global
 		{1EEEB2FF-43FE-4EEB-A40F-2C2858D176BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EEEB2FF-43FE-4EEB-A40F-2C2858D176BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EEEB2FF-43FE-4EEB-A40F-2C2858D176BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE321F91-CE34-47CA-B43A-CAD080466A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE321F91-CE34-47CA-B43A-CAD080466A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE321F91-CE34-47CA-B43A-CAD080466A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE321F91-CE34-47CA-B43A-CAD080466A4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
