@@ -10,7 +10,7 @@ public class TransactionDetail
     public double Amount { get; set; }
     public string? Description { get; set; }
     public int TransactionId { get; set; }
+    public Transaction Transaction { get; set; } = default!;
     public int LineItemTypeId { get; set; }
-    public virtual Transaction Transaction { get; set; } = default!;
-    public virtual LineItemType LineItemType { get; set; } = default!;
+    public LineItemType LineItemType { get; set; } = default!;
 }

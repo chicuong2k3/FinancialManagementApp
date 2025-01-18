@@ -1,25 +1,25 @@
 ﻿namespace FinancialManagementApp.Api.Domain.Models;
 
 /// <summary>
-/// Represents a financial transaction within an account.
+/// Represents a financial transaction associated with an account.
 /// </summary>
 public class Transaction
 {
     public int Id { get; set; }
-    public int AccountId { get; set; }
-    public int PayeeId { get; set; }
+    /// <summary>
+    /// Date when the transaction was recorded.
+    /// </summary>
     public DateTime DateEntered { get; set; } = DateTime.UtcNow;
     /// <summary>
-    /// The date the transaction actually occurred.
+    /// The actual date of the transaction.
     /// </summary>
     public DateTime TransactionDate { get; set; } = DateTime.UtcNow;
-    /// <summary>
-    /// Optional description or notes about the transaction.
-    /// </summary>
     public string? Memo { get; set; }
     public bool IsDeleted { get; set; }
-    public virtual Account Account { get; set; } = default!;
-    public virtual Payee Payee { get; set; } = default!;
-    public virtual ICollection<TransactionDetail> TransactionDetails { get; set; } = new HashSet<TransactionDetail>();
-    public virtual Transfer? Transfer { get; set; }
+    public int AccountId { get; set; }
+    public Account Account { get; set; } = default!;
+    public int PayeeId { get; set; }
+    public Payee Payee { get; set; } = default!;
+    public ICollection<TransactionDetail> TransactionDetails { get; set; } = new HashSet<TransactionDetail>();
+    public Transfer? Transfer { get; set; }
 }

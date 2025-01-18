@@ -1,13 +1,15 @@
 ﻿namespace FinancialManagementApp.Api.Domain.Models;
 
 /// <summary>
-/// Represents a transfer between two transactions (typically from one account to another).
+/// Represents afund transfer between accounts.
 /// </summary>
 public class Transfer
 {
     public int Id { get; set; }
+
     public int TransactionId { get; set; }
+    public Transaction Transaction { get; set; } = default!;
+
     public int AccountId { get; set; }
-    public virtual Transaction Transaction { get; set; } = default!;
-    public virtual Account Account { get; set; } = default!;
+    public Account Account { get; set; } = default!;
 }

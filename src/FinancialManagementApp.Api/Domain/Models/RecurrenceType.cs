@@ -3,7 +3,7 @@
 namespace FinancialManagementApp.Api.Domain.Models;
 
 /// <summary>
-/// Defines the recurrence pattern for scheduled transactions (daily, weekly,...).
+/// Defines the predefined recurrence types for scheduled transactions (daily, weekly,...).
 /// </summary>
 public class RecurrenceType : LookupItemBase
 {

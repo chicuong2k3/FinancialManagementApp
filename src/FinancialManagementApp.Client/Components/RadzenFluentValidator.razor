@@ -1,0 +1,49 @@
+﻿@inherits ValidatorBase
+
+@typeparam TModel
+
+@if (Visible && !IsValid)
+{
+    <div class="@GetComponentCssClass()" style="@Style" @attributes="Attributes">
+        @Text
+    </div>
+}
+
+@code {
+    [Parameter]
+    public required IValidator Validator { get; set; }
+
+    [Parameter]
+    public override string Text { get; set; } = "Invalid value.";
+
+    [Parameter]
+    public required TModel Model { get; set; }
+
+    protected override bool Validate(IRadzenFormComponent component)
+    {
+        if (Validator == null || Model == null)
+        {
+            throw new InvalidOperationException("Validator and Model parameters must be set.");
+        }
+
+        var propertyName = component.FieldIdentifier.FieldName;
+        if (string.IsNullOrEmpty(propertyName))
+        {
+            throw new InvalidOperationException($"Field name for the component {component.GetType().Name} is null or empty.");
+        }
+
+        // Validate the specific property
+        var context = new ValidationContext<TModel>(Model);
+        var result = Validator.Validate(context);
+
+        var errors = result.Errors.Where(e => e.PropertyName == propertyName).ToList();
+
+        if (errors.Any())
+        {
+            Text = errors.First().ErrorMessage;
+            return false;
+        }
+
+        return true;
+    }
+}

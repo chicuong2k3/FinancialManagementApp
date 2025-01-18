@@ -77,7 +77,7 @@ public class AppDbContext : DbContext
             buildAction.Property(e => e.Memo)
                     .HasMaxLength(250);
 
-            
+
         });
 
         modelBuilder.Entity<TransactionDetail>().Property(e => e.Description)
@@ -116,7 +116,7 @@ public class AppDbContext : DbContext
             var lookupItem = entity as LookupItemBase;
             lookupItem!.LastUpdated = DateTime.UtcNow;
         }
-            
+
         return base.SaveChangesAsync(cancellationToken);
     }
 
