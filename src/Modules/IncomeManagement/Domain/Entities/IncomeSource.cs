@@ -4,7 +4,8 @@ using IncomeManagement.Domain.ValueObjects;
 namespace IncomeManagement.Domain.Entities;
 
 /// <summary>
-/// Represents a source of income. This is the aggregate root.
+/// Represents the core concept of an income stream (e.g., Salary, Freelance Work). 
+/// This is the aggregate root.
 /// </summary>
 internal class IncomeSource
 {
@@ -12,6 +13,9 @@ internal class IncomeSource
     public string Name { get; private set; } = default!;
     public IncomeCategory Category { get; private set; } = default!;
 
+    /// <summary>
+    /// A single IncomeSource can have multiple RecurringIncome schedules (e.g., ).
+    /// </summary>
     private ICollection<RecurringIncome> recurringIncomes;
     private ICollection<Transaction> transactions;
 

@@ -1,29 +1,23 @@
 ﻿using IncomeManagement.Domain.ValueObjects;
 
 namespace IncomeManagement.Domain.Entities;
-
+/// <summary>
+/// Represents a recurring payment tied to an IncomeSource (e.g., a monthly salary).
+/// </summary>
 internal class RecurringIncome
 {
     public Guid Id { get; private set; }
     public Money Amount { get; private set; } = default!;
     public PaymentFrequency Frequency { get; private set; } = default!;
-    public DateTime StartDate { get; private set; }
-    public DateTime? EndDate { get; private set; }
-    public Guid IncomeSourceId { get; private set; }
+    public DateTime NextPaymentDate { get; private set; }
 
     private RecurringIncome() { }
 
-    public RecurringIncome(Money amount, PaymentFrequency frequency, DateTime startDate, DateTime? endDate = null)
+    public RecurringIncome(Money amount, PaymentFrequency frequency, DateTime nextPaymentDate)
     {
         Id = Guid.NewGuid();
         Amount = amount ?? throw new ArgumentNullException(nameof(amount));
         Frequency = frequency ?? throw new ArgumentNullException(nameof(frequency));
-        StartDate = startDate;
-        EndDate = endDate;
-    }
-
-    public bool IsActive(DateTime currentDate)
-    {
-        return currentDate >= StartDate && (EndDate == null || currentDate <= EndDate);
+        NextPaymentDate = nextPaymentDate;
     }
 }

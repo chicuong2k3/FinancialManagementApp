@@ -2,6 +2,9 @@
 
 namespace IncomeManagement.Domain.Entities;
 
+/// <summary>
+/// Represents one-time income events, such as freelance payments or ad-hoc bonuses.
+/// </summary>
 internal class Transaction
 {
     public Guid Id { get; private set; }
@@ -9,9 +12,6 @@ internal class Transaction
     public DateTime TransactionDate { get; private set; }
     public string? Description { get; private set; }
     public Money Amount { get; private set; } = default!;
-
-
-    public Guid IncomeSourceId { get; private set; }
 
     private Transaction() { }
 

@@ -1,27 +1,23 @@
 ﻿namespace IncomeManagement.Domain.ValueObjects
 {
-    internal class Money
+    internal record Money
     {
         public decimal Value { get; private set; }
-        /// <summary>
-        /// ISO 4217 currency code (e.g., USD, EUR)
-        /// </summary>
         public string Currency { get; private set; }
-
         public Money(decimal value, string currency)
         {
             if (value < 0)
             {
-                throw new ArgumentException("Money value cannot be negative.");
+                throw new ArgumentException("Money value cannot be negative.", nameof(value));
             }
 
             if (string.IsNullOrWhiteSpace(currency))
             {
-                throw new ArgumentNullException(nameof(currency));
+                throw new ArgumentNullException(nameof(currency), "Currency cannot be null or empty.");
             }
 
             Value = value;
-            Currency = currency.ToUpper();
+            Currency = currency;
         }
 
         public Money Add(Money other)
@@ -31,7 +27,7 @@
                 throw new InvalidOperationException("Cannot add money with different currencies.");
             }
 
-            return new Money(Value + other.Value, Currency);
+            return this with { Value = Value + other.Value };
         }
 
         public Money Subtract(Money other)
@@ -41,7 +37,7 @@
                 throw new InvalidOperationException("Cannot subtract money with different currencies.");
             }
 
-            return new Money(Value - other.Value, Currency);
+            return this with { Value = Value - other.Value };
         }
 
         public override string ToString() => $"{Value} {Currency}";
