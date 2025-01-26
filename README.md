@@ -11,7 +11,7 @@ Income is the foundation of all financial activities. Without accurate tracking 
 **Core Features:**
 - Add and manage multiple income sources (e.g., salary, freelance, rental income, investment dividends).
 - Manage recurring income with automated schedules (e.g., monthly salary, rent payments).
-- Categorize income sources (e.g., primary, passive, side hustle) and maintain historical income trends.
+- Categorize income sources and maintain historical income trends.
 - Sync with bank accounts and financial institutions for automated income tracking.
 - Integrate with payroll systems for direct updates on salaries.
 - Notifications for irregular income deposits or missing payments.
