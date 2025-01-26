@@ -1,0 +1,107 @@
+﻿@* @page "/payment"
+
+
+
+<RadzenTemplateForm TItem="CreatePaymentRequest" Data="model" Submit="HandleSubmit">
+    <RadzenStack>
+
+        <RadzenFormField Text="Transaction Date" AllowFloatingLabel="false">
+            <ChildContent>
+                <RadzenDatePicker Name="@nameof(model.TransactionDate)" @bind-Value="model.TransactionDate" Disabled="isSubmitting" />
+            </ChildContent>
+            <Helper>
+                <RadzenFluentValidator Model="model" Validator="Validator" Component="@nameof(model.TransactionDate)" />
+            </Helper>
+        </RadzenFormField>
+
+
+        <RadzenFormField Text="Payee" AllowFloatingLabel="false">
+            <RadzenDropDown Data="@payees" @bind-Value="model.PayeeId" Placeholder="Select payee"
+                            TextProperty="@nameof(PayeeDto.Name)" ValueProperty="@nameof(PayeeDto.Id)" />
+        </RadzenFormField>
+
+        <RadzenFormField Text="Memo" AllowFloatingLabel="false">
+            <RadzenTextBox Name="@nameof(model.Memo)" @bind-Value="model.Memo" Disabled="isSubmitting" />
+        </RadzenFormField>
+
+        <RadzenButton Variant="Variant.Flat" ButtonStyle="ButtonStyle.Secondary">Add line item</RadzenButton>
+
+
+
+
+        <RadzenRow>
+            <RadzenColumn Size="12" SizeSM="6" Order="2" OrderSM="1">
+                <RadzenButton Variant="Variant.Flat" ButtonStyle="ButtonStyle.Base" Style="width: 100%" Click="@(() => NavigationManager.NavigateTo("/category"))">Trở về</RadzenButton>
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeSM="6" Order="1" OrderSM="2">
+                <RadzenButton Variant="Variant.Flat" Style="width: 100%" ButtonType="ButtonType.Submit" IsBusy="isSubmitting">Lưu thay đổi</RadzenButton>
+            </RadzenColumn>
+        </RadzenRow>
+    </RadzenStack>
+</RadzenTemplateForm>
+
+@code {
+    [Inject] public required IValidator<CreatePaymentRequest> Validator { get; set; }
+    [Inject] public required NavigationManager NavigationManager { get; set; }
+    [Inject] public required NotificationService NotificationService { get; set; }
+    CreatePaymentRequest model = new();
+    bool isSubmitting = false;
+
+
+    List<PayeeDto> payees = [];
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // var response = await CategoriesApiService.FetchCategoriesAsync(new(false));
+
+            // if (response != null)
+            // {
+            //     categories = response.Data;
+            // }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task HandleSubmit(CreatePaymentRequest model)
+    {
+        isSubmitting = true;
+
+        try
+        {
+            //var createdBook = await CategoriesApiService.CreateCategoryAsync(model);
+
+            NotificationService.Notify(new NotificationMessage()
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Tạo danh mục thành công!",
+                    Duration = 2000
+                });
+
+            NavigationManager.NavigateTo($"/category");
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            NotificationService.Notify(new NotificationMessage()
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Có lỗi xảy ra! Vui lòng thử lại sau.",
+                    Duration = 2000
+                });
+        }
+
+        isSubmitting = false;
+    }
+
+}
+ *@
