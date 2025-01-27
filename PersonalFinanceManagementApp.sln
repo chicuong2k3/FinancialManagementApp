@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{A9E445D3-604D-4135-BE16-AB483C904937}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A639E7AA-9246-4411-A560-D5F04B5961FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalFinanceManagementApp.Tests", "test\PersonalFinanceManagementApp.Tests\PersonalFinanceManagementApp.Tests.csproj", "{B6313517-F098-46E0-8F22-B7E1175D1065}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,10 @@ Global
 		{15BCD5D4-0494-4BE9-9FDB-4E7DD8511069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15BCD5D4-0494-4BE9-9FDB-4E7DD8511069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15BCD5D4-0494-4BE9-9FDB-4E7DD8511069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6313517-F098-46E0-8F22-B7E1175D1065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6313517-F098-46E0-8F22-B7E1175D1065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6313517-F098-46E0-8F22-B7E1175D1065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6313517-F098-46E0-8F22-B7E1175D1065}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{8725AD73-28D8-4611-B8A7-701ACAD4E2F8} = {A3AB9B25-7354-406A-B9F7-587B9B4B893D}
 		{15BCD5D4-0494-4BE9-9FDB-4E7DD8511069} = {A3AB9B25-7354-406A-B9F7-587B9B4B893D}
 		{A9E445D3-604D-4135-BE16-AB483C904937} = {A3AB9B25-7354-406A-B9F7-587B9B4B893D}
+		{B6313517-F098-46E0-8F22-B7E1175D1065} = {A639E7AA-9246-4411-A560-D5F04B5961FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70399829-8CDE-4DD3-85AB-A99C6ED11A65}
